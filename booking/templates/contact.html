@@ -1,0 +1,376 @@
+{% load static %}
+<head>
+    <title>Glow Haven Salon And Spa</title>
+        <!--Font Awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!--CSS file-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Toggle Button -->
+    <nav class="navbar">
+        <h1>Glow Haven</h1>
+       
+      <div class="middle">
+       <ul class="page-nav flex-row">
+          <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#about-us">About US</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#footer">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+        </li>
+        </ul>
+      </div>
+      <div class="booking-btn">
+        <a class="btn btn-outline-primary" href="#reserve">Book Appointment</a>
+      </div>
+  <i id="toggleSidebar" class="fas fa-bars"></i>
+    <!-- Overlay for sidebar -->
+  
+   
+    <!-- Sidebar -->
+    <div id="sidebar" class="bg-dar p-3 sidebar">
+        <div class="sidebar-logo">
+            <h2>Glow Haven</h2>
+        </div>
+        <hr class="text-white">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#about-us">About US</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#footer">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+        </li>
+            <li class="nav-item btn btn-primary">
+                <a class="nav-link btn btn-primary" href="#reserve">Book Reservation</a>
+            </li>
+        </ul>
+    </div>
+    </nav>
+     <div id="overlay" class="overlay"></div>
+     
+     <!--Main Content-->
+
+{% if messages %}
+    {% for message in messages %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+   {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+ {% endfor %}
+{% endif %}
+     <!--Hero container-->
+<div class="container hero-rev">
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome To Glow Haven</h1>
+            <p class="hero-lead">Your Glow Our Passion</p>
+            <p>Transform your look with our expert stylist. Book your appointment today and step into confidence</p>
+            
+              <div class="button-group">
+                  <a href="#about-us" class="btn btn-primary">About Us</a>
+                  <a href="#reserve" class="btn btn-secondary">Book Appointment</a>
+                </div>
+            
+        </div>
+        <div class="hero-image">
+            <img src="{% static 'images/hair-nyc-yukie.webp' %}" alt="Hero Image" class="cropped-image">
+        </div>
+    </div>
+</div>
+
+
+<!--Services section-->
+
+<section class="services" id="services">
+  <h3>Our Signature Services</h3>
+  <div class="line"></div>
+  <div class="container service-container">
+    
+    <div class="card">
+      <div class="card-img">
+        <img src="{% static 'images/scissors.png' %}" alt="">
+      </div>
+      <div class="card-body">
+        <h4>Haircuts & Styling</h4>
+        <p>Precision cuts tailored your style. Whether you're looking for a trendy refresh or a timeless look, our
+          experts stylist will craft the perfect shape for you
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <img src="{% static 'images/hair.png' %}" alt="">
+      </div>
+      <div class="card-body">
+        <h4>Hair Treatment & Repair</h4>
+        <p>Revitalize and strengthen your hair with our deep conditioning treatment. Say goodbye to dryness and damage
+          and hello to silky, healthy look.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <img src="{% static 'images/plant.png' %}" alt="">
+      </div>
+      <div class="card-body">
+        <h4>Spa & Relaxation Therapies</h4>
+        <p>Indulge in total relaxation with our soothing spa treatments. Unwind, de-stress, amd restore your inner glow with our
+          expert touch
+        </p>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-img">
+        <img src="{% static 'images/nail-art.png' %}" alt="">
+      </div>
+      <div class="card-body">
+        <h4>Nails & Manicure</h4>
+        
+        <p>
+          Pamper your hands with luxurious nail care. From classic manicure to stunning nail art, we ensure flawless, 
+          long-lasting beauty. 
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <img src="{% static 'images/aromatherapy.png' %}" alt="">
+      </div>
+      <div class="card-body">
+        <h4>Pedicure & Foot Spa</h4>
+        <p>
+          Relax, refresh and rejuvenate your feet with our indulgent pedicure treatment. Soft, smooth, and beautyfully polished
+          toes await!.
+        </p>
+      </div>
+    </div>
+</div>
+</section>
+<!--Accordion-->
+
+<section class="about" id="about-us">
+  <h3>About Us</h3>
+  <div class="line"></div>
+  <div class="about-hero container">
+    <div class="first">
+      <h1>More Than A Salon: A Place For Confidence & Transformation</h1>
+      <p>
+        At Glow Haven, we believe beauty is about confidence and self-expression. With over 10 years of experience
+        , our passionate stylist are here to bring your vision to life in a warm, cool and welcoming environment.
+      </p>
+    </div>
+    <div class="last">
+      <img src="{% static 'images/spa-nyc-yukie.webp' %}" alt="">
+    </div>
+  </div>
+  <hr>
+    <div class="container" id="faq">
+      <div class="row gy-5 gy-lg-0 align-items-lg-center">
+        <div class="col-12 col-lg-6">
+          <img class="img-fluid rounded" loading="lazy" src="{% static 'images/head-spa.jpg' %}" alt="How can we help you?">
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="row justify-content-xl-end">
+            <div class="color-ch col-12 col-xl-11">
+              <h2 class="h1 mb-3">How can we help you?</h2>
+              <p class="lead fs-4 text-secondar mb-5">We hope you have found an answer to your question. If you need any help, please search your query on our Support Center or contact us via email.</p>
+              <div class="accordion accordion-flush" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      How Does Payment System Work?
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      A payment system is a way to transfer money from one person or organization to another. It is a complex process that involves many different parties, including banks, credit card companies, and merchants.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      How Do I Cancel My Reservation?
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      A payment system is a way to transfer money from one person or organization to another. It is a complex process that involves many different parties, including banks, credit card companies, and merchants.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      How Does The Reservation System Works?
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <p>To cancel your account, please follow these steps:</p>
+                      <ul>
+                        <li>Go to our website and sign in to your account.</li>
+                        <li>Click on your profile picture in the top right corner of the page and select "Account Settings."</li>
+                        <li>Scroll to the bottom of the page and click on "Cancel Account."</li>
+                        <li>Enter your password and click on "Cancel Account."</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <hr>
+  <section class="about" id="reserve">
+    <h3>Book Reservation</h3>
+    <div class="line"></div>
+    <div class="about-hero container">
+      <div class="first">
+        <h3>Reserve Your Spot Today</h3>
+        <p>Ready for your glow up? Book your reservation in just a few click. Choose your service, preferred stylist
+          and time that works out for you.</p>
+      </div>
+      <div class="last">
+                
+        <form action="" method="post">
+          {% csrf_token %}
+          {{form}}
+          <button class="btn btn-success m-3" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>  
+  
+  <hr>
+
+  <section class="drift-sect">
+    <h3>Drift By Numbers</h3>
+    <div class="line"></div>
+    <div class="container">
+    <div class="about-card">
+      <div class="drift">
+        <h3>2024</h3>
+      </div>
+      <div class="drift">
+        <h3>5,000 <span class="countries">+</span></h3>
+      </div>
+      <div class="drift">
+        <h3>12</h3>
+      </div>
+    </div>
+    <div class="drift-info">
+      <div class="drift">
+        <h3>Year Founded</h3>
+      </div>
+      <div class="drift">
+        <h3>Customers</h3>
+      </div>
+      <div class="drift">
+        <h3>Countries operated in</h3>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="footer">
+    <div class="footer-row">
+      <ul>
+        <li class="brand-name"><h4>Glow Haven</h4></li>
+        <li><i class="fa-solid fa-location-dot"></i> +2348106265136</li>
+        <li><i class="fa fa-phone" aria-hidden="true"></i> 123 Street, New York, USA</li>
+        <li><i class="fa-regular fa-envelope"></i> Glow Haven@gmail.com</li>
+
+      </ul>
+      <div class="sub-links">
+       
+      </div>
+    </div>
+    <div class="footer-row">
+      <ul>
+        <li><h4>Quick Links</h4></li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#about-us">About US</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#footer">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#services">Services</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#faq">FAQs</a>
+  </li>
+      </ul>
+    </div>
+    <div class="footer-row">
+      <ul>
+        <li><h4>Glow Haven</h4></li>
+        <li><i class="fa-solid fa-location-dot"></i> +2348106265136</li>
+        <li><i class="fa fa-phone" aria-hidden="true"></i> 123 Street, New York, USA</li>
+        <li><i class="fa-regular fa-envelope"></i> Glow Haven@gmail.com</li>
+
+      </ul>
+    </div>
+    <div class="footer-row footer-row-last"> 
+      
+      <ul>
+        <li><h4>Socials</h4></li>
+      <li><i class="fa-brands fa-facebook-f"></i> <a rel="noopener" href="https://www.facebook.com" target="_blank">Facebook</a></li>
+      <li><i class="fa-brands fa-instagram"></i> Instagram</li>
+      <li><i class="fa-brands fa-twitter"></i> X</li>
+      <li><i class="fa-brands fa-pinterest"></i> Pinterest</li>
+
+    </ul>
+    </div>
+    <p class="copy">&copy; 2025 Wizard IT. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JavaScript to toggle the sidebar and overlay
+        document.getElementById('toggleSidebar').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.toggle('show');
+            document.getElementById('overlay').classList.toggle('show');
+        });
+
+        // Close sidebar when clicking on overlay
+        document.getElementById('overlay').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.remove('show');
+            document.getElementById('overlay').classList.remove('show');
+        });
+    </script>
+    <script>
+      $('#sponsor-carousel').carousel({
+        interval: 3000,
+        cycle: true
+      }); 
+    </script>
+</body>
+</html>
